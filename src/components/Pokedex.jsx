@@ -33,6 +33,8 @@ const Pokedex = () => {
 
   return (
     <div>
+      {" "}
+      {selectedPokemon && <PokemonDetails pokemonName={selectedPokemon} />}
       {/* Search bar */}
       <input
         type="text"
@@ -41,10 +43,9 @@ const Pokedex = () => {
         onChange={handleSearchInputChange}
       />{" "}
       {/* Display selected Pokémon details */}
-      {selectedPokemon && <PokemonDetails pokemonName={selectedPokemon} />}
       {/* Display filtered results */}
-      <div className="bg-pink-500 flex justify-center items-center">
-        <div className="grid grid-cols-5">
+      <div className="flex justify-center items-center">
+        <div className="grid lg:grid-cols-5 grid-cols-3 md:grid-cols-4">
           {filteredPokemonList.map((pokemon, index) => (
             <PokemonCard
               key={index}

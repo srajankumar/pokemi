@@ -2,8 +2,8 @@
 import Pokedex from "@/components/Pokedex";
 export default function Home() {
   return (
-    <div>
-      <h1>Pokédex</h1>
+    <div className="backdrop-blur-sm min-h-screen">
+      {/* <h1>Pokédex</h1> */}
       <Pokedex />
     </div>
   );

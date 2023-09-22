@@ -1,7 +1,7 @@
 const PokemonCard = ({ pokemon, index, onClick }) => {
   return (
     <div
-      className="m-5 bg-green-400 w-40 flex justify-center items-center flex-col"
+      className="m-5 flex justify-center items-center flex-col"
       onClick={onClick}
     >
       <img
@@ -9,9 +9,10 @@ const PokemonCard = ({ pokemon, index, onClick }) => {
           index + 1
         }.gif`}
         alt={pokemon.name}
+        className="backdrop-blur-md"
       />
-      <p>{pokemon.name}</p>
-      <p>{index + 1}</p>
+      {/* <p>{pokemon.name}</p>
+      <p>{index + 1}</p> */}
     </div>
   );
 };
