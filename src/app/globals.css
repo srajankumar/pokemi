@@ -3,13 +3,16 @@
 @tailwind utilities;
 
 body {
-  background-image: url("/assets/wallpaper.png");
+  background-image: url("/assets/wall.png");
   background-repeat: repeat-y;
-  background-size: 100vw; /* Optional: adjust the size as needed */
+  background-size: 100vw;
 }
 
 @media (max-width: 900px) {
   body {
-    background-size: 150%; /* Adjust the zoom level as needed */
+    background-size: 150%;
+  }
+  .foot {
+    size: 150%;
   }
 }

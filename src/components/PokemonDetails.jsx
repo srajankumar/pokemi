@@ -1,67 +1,3 @@
-// import React, { useState, useEffect } from "react";
-// import axios from "axios";
-
-// const PokemonDetails = ({ pokemonName }) => {
-//   const [pokemonData, setPokemonData] = useState(null);
-
-//   useEffect(() => {
-//     axios
-//       .get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
-//       .then((response) => {
-//         setPokemonData(response.data);
-//       });
-//   }, [pokemonName]);
-
-//   if (!pokemonData) {
-//     return <div>Loading...</div>;
-//   }
-
-//   return (
-//     <div className="fixed top-0 right-0 bg-black text-white">
-//       <h2>{pokemonData.name}</h2>
-//       <img src={pokemonData.sprites.front_default} alt={pokemonData.name} />
-//       <img
-//         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${pokemonData.id}.gif`}
-//         alt={pokemonData.name}
-//       />
-//       <img
-//         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/back/${pokemonData.id}.gif`}
-//         alt={pokemonData.name}
-//       />
-//       <img
-//         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/${pokemonData.id}.gif`}
-//         alt={pokemonData.name}
-//       />
-//       <img
-//         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/back/shiny/${pokemonData.id}.gif`}
-//         alt={pokemonData.name}
-//       />
-//       <h3>Details:</h3>
-//       <p>ID: {pokemonData.id}</p>
-//       <p>Height: {pokemonData.height} decimetres</p>
-//       <p>Weight: {pokemonData.weight} hectograms</p>
-
-//       <h3>Abilities:</h3>
-//       <ul>
-//         {pokemonData.abilities.map((ability, index) => (
-//           <li key={index}>{ability.ability.name}</li>
-//         ))}
-//       </ul>
-
-//       <h3>Types:</h3>
-//       <ul>
-//         {pokemonData.types.map((type, index) => (
-//           <li key={index}>{type.type.name}</li>
-//         ))}
-//       </ul>
-
-//       {/* Add more details you want to display */}
-//     </div>
-//   );
-// };
-
-// export default PokemonDetails;
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -117,7 +53,7 @@ const PokemonDetails = ({ pokemonName }) => {
   const currentImages = showShinyImages ? shinyImages : nonShinyImages;
 
   return (
-    <div className="sticky top-0 w-full h-screen flex justify-center flex-col items-center text-white">
+    <div className="flex justify-center flex-col items-center text-white">
       <div className="bg-black">
         <h2>{pokemonData.name}</h2>
         <img src={currentImages[currentImageIndex]} alt={pokemonData.name} />

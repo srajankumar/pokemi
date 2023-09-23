@@ -26,6 +26,10 @@ const Pokedex = () => {
     setSelectedPokemon(pokemonName);
   };
 
+  const handleCloseDetails = () => {
+    setSelectedPokemon(null);
+  };
+
   // Filter the pokemonList based on the search input
   const filteredPokemonList = pokemonList.filter((pokemon) =>
     pokemon.name.toLowerCase().includes(searchInput.toLowerCase())
@@ -33,19 +37,24 @@ const Pokedex = () => {
 
   return (
     <div>
-      {" "}
-      {selectedPokemon && <PokemonDetails pokemonName={selectedPokemon} />}
+      {/* Pokemon details container */}
+      <div className="sticky top-0 z-10">
+        {selectedPokemon && (
+          <div className="bg-green-500 h-screen">
+            <button onClick={handleCloseDetails}>Close</button>{" "}
+            <PokemonDetails pokemonName={selectedPokemon} />
+          </div>
+        )}
+      </div>
       {/* Search bar */}
       <input
         type="text"
         placeholder="Search Pokémon by Name"
         value={searchInput}
         onChange={handleSearchInputChange}
-      />{" "}
-      {/* Display selected Pokémon details */}
-      {/* Display filtered results */}
-      <div className="flex justify-center items-center">
-        <div className="grid lg:grid-cols-5 grid-cols-3 md:grid-cols-4">
+      />
+      <div className="flex justify-center items-center pb-10">
+        <div className="grid w-4/5 lg:grid-cols-5 grid-cols-3 sm:grid-cols-4">
           {filteredPokemonList.map((pokemon, index) => (
             <PokemonCard
               key={index}
